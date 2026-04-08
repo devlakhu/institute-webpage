@@ -16,10 +16,9 @@ Follow these instructions to get a copy of the project up and running on your lo
 You will need **Git** installed on your machine and **Python** (to run a local development server).
 
 ### Installation & Usage
-```
+
 1. **Clone the repository:**
-   ```
-   git clone https://github.com/devlakhu/institute-webpage```
+   git clone https://github.com/devlakhu/institute-webpage
 
  2. **Navigate into the directory:**
    ```bash
@@ -29,9 +28,9 @@ You will need **Git** installed on your machine and **Python** (to run a local d
  3. **Start the local server:**
    Python has a built-in module to serve files instantly:
    ```bash
-   python -m http.server
+   python -m http.server```
    
-   ```
+
  4. **View the website:**
    Open your browser and navigate to:
    **http://localhost:8000** *(Note: Some terminals display this as https://[::]:8000/)*
