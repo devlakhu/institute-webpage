@@ -19,13 +19,11 @@ You will need **Git** installed on your machine and **Python** (to run a local d
 ```
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/devlakhu/institute-webpage](https://github.com/devlakhu/institute-webpage)```
+   git clone https://github.com/devlakhu/institute-webpage```
 
-```
  2. **Navigate into the directory:**
    ```bash
-   cd institute-webpage
-   
+   cd institute-webpage  
    ```
  3. **Start the local server:**
    Python has a built-in module to serve files instantly:
