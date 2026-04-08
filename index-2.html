@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Success Coaching – Saharsa, Bihar</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --deep: #1a1a2e;
+    --gold: #FFB300;
+    --cream: #FFF8F0;
+    --green: #1B7A3E;
+    --white: #ffffff;
+    --text: #2d2d2d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    background: var(--deep);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .nav-brand { font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: var(--white); line-height: 1.1; }
+  .nav-brand span { color: var(--gold); }
+  .nav-cta { background: var(--saffron); color: #fff; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .9rem; transition: background .2s; }
+  .nav-cta:hover { background: var(--gold); color: var(--deep); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--deep) 0%, #16213e 60%, #0f3460 100%);
+    padding: 60px 5% 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,107,0,.15); }
+  .hero-text { flex: 1; min-width: 260px; position: relative; z-index: 1; }
+  .badge { display: inline-block; background: var(--saffron); color: #fff; font-size: .78rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+  .hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; color: var(--white); line-height: 1.15; }
+  .hero h1 span { color: var(--gold); }
+  .hero p { color: #ccc; font-size: 1rem; margin: 14px 0 28px; line-height: 1.7; max-width: 460px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { background: var(--saffron); color: #fff; padding: 13px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .95rem; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 18px rgba(255,107,0,.4); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: #fff; padding: 13px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .95rem; display: flex; align-items: center; gap: 8px; transition: transform .2s; }
+  .btn-whatsapp:hover { transform: translateY(-2px); }
+  .hero-images { flex: 1; min-width: 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: relative; z-index: 1; }
+  .hero-images img { width: 100%; border-radius: 12px; object-fit: cover; height: 150px; border: 2px solid rgba(255,179,0,.3); }
+  .hero-images img:first-child { grid-column: 1 / -1; height: 200px; }
+
+  /* STATS */
+  .stats { background: var(--saffron); padding: 24px 5%; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px 50px; }
+  .stat { text-align: center; color: #fff; }
+  .stat-num { font-family: 'Baloo 2', cursive; font-size: 2rem; font-weight: 800; line-height: 1; }
+  .stat-label { font-size: .82rem; opacity: .9; margin-top: 2px; }
+
+  /* SECTIONS */
+  section { padding: 60px 5%; }
+  .section-tag { display: inline-block; background: rgba(255,107,0,.12); color: var(--saffron); font-size: .75rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  h2 { font-family: 'Baloo 2', cursive; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; color: var(--deep); margin-bottom: 8px; }
+  h2 span { color: var(--saffron); }
+  .sub { color: #666; max-width: 560px; line-height: 1.7; margin-bottom: 36px; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-inner { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+  .about-text { flex: 1; min-width: 260px; }
+  .about-images { flex: 1; min-width: 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .about-images img { width: 100%; border-radius: 12px; object-fit: cover; height: 160px; box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+  .about-images img:first-child { grid-column: 1 / -1; height: 200px; }
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 24px; }
+  .info-card { background: var(--cream); border-radius: 12px; padding: 16px; border-left: 4px solid var(--saffron); }
+  .info-card .ic-label { font-size: .75rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+  .info-card .ic-val { font-size: .95rem; font-weight: 700; color: var(--deep); margin-top: 4px; }
+
+  /* CLASSES */
+  .classes { background: var(--cream); }
+  .classes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .class-card { background: var(--white); border-radius: 16px; padding: 24px 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.07); transition: transform .2s; position: relative; overflow: hidden; }
+  .class-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); }
+  .class-card:hover { transform: translateY(-4px); }
+  .class-icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .class-card h3 { font-family: 'Baloo 2', cursive; font-size: 1.1rem; color: var(--deep); }
+  .class-card p { font-size: .85rem; color: #666; margin-top: 6px; line-height: 1.5; }
+  .class-tag { display: inline-block; background: rgba(255,107,0,.1); color: var(--saffron); font-size: .75rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; margin-top: 12px; }
+
+  /* GALLERY */
+  .gallery { background: var(--white); }
+  .gallery-grid { columns: 3; column-gap: 12px; }
+  .gallery-grid img { width: 100%; border-radius: 10px; margin-bottom: 12px; object-fit: cover; transition: opacity .2s; cursor: pointer; break-inside: avoid; }
+  .gallery-grid img:hover { opacity: .88; }
+
+  /* TEAM */
+  .team { background: var(--cream); }
+  .team-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+  .team-card { background: var(--white); border-radius: 20px; padding: 28px 24px; text-align: center; width: 220px; box-shadow: 0 4px 20px rgba(0,0,0,.07); position: relative; overflow: hidden; }
+  .team-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); }
+  .team-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); margin-bottom: 12px; }
+  .team-card h3 { font-family: 'Baloo 2', cursive; font-size: 1.1rem; color: var(--deep); }
+  .team-card .role { font-size: .8rem; color: var(--saffron); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-top: 4px; }
+
+  /* CONTACT */
+  .contact { background: var(--deep); color: var(--white); }
+  .contact h2 { color: var(--white); }
+  .contact .sub { color: #aaa; }
+  .contact-inner { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+  .contact-info { flex: 1; min-width: 240px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px; }
+  .contact-icon { width: 44px; height: 44px; background: rgba(255,107,0,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .contact-item a { color: var(--gold); text-decoration: none; }
+  .contact-map { flex: 1; min-width: 260px; }
+  .contact-map iframe { width: 100%; height: 280px; border-radius: 14px; border: none; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 14px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; margin-top: 20px; transition: transform .2s; box-shadow: 0 4px 20px rgba(37,211,102,.3); }
+  .wa-btn:hover { transform: translateY(-2px); }
+
+  /* SOCIAL + FOOTER */
+  .social-bar { background: #111; padding: 20px 5%; text-align: center; }
+  .social-bar a { display: inline-flex; align-items: center; gap: 10px; background: #1877F2; color: #fff; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .9rem; }
+  footer { background: #0a0a14; padding: 18px 5%; text-align: center; color: #555; font-size: .82rem; }
+  footer span { color: var(--saffron); }
+
+  /* FLOATING WA */
+  .float-wa { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,.5); z-index: 200; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.5); } 50% { box-shadow: 0 4px 36px rgba(37,211,102,.8); } }
+
+  @media(max-width:600px) {
+    .gallery-grid { columns: 2; }
+    nav { padding: 0 4%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://i.ibb.co/Gfyw48Rd/logo.jpg" alt="Logo" onerror="this.style.display='none'">
+    <div class="nav-brand">Success <span>Coaching</span><br><small style="font-size:.62rem;font-weight:500;color:#aaa;">Saharsa, Bihar</small></div>
+  </div>
+  <a class="nav-cta" href="https://wa.me/917295023249?text=Hello%2C%20I%20want%20to%20know%20about%20admissions%20at%20Success%20Coaching." target="_blank">📞 Enquire Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="badge">🏆 Est. 02 April 2023</div>
+    <h1>Success <span>Coaching</span><br>Institute</h1>
+    <p>Quality education for Classes 6th–10th. Building bright futures in Saharsa, Bihar with dedicated teachers and proven results.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#contact">Get Admission</a>
+      <a class="btn-whatsapp" href="https://wa.me/917295023249?text=Hello%2C%20I%20want%20to%20enquire%20about%20admissions%20at%20Success%20Coaching." target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="white" stroke-width="1.5"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="hero-images">
+    <img src="https://i.ibb.co/zWzCYmT9/IMG-20260326-WA0027.jpg" alt="Success Coaching" onerror="this.src='https://placehold.co/600x200/16213e/FFB300?text=Success+Coaching'">
+    <img src="https://i.ibb.co/4wHCGFnv/img.jpg" alt="Students" onerror="this.src='https://placehold.co/300x150/FF6B00/fff?text=Students'">
+    <img src="https://i.ibb.co/s9TBLb24/img2.jpg" alt="Classroom" onerror="this.src='https://placehold.co/300x150/1a1a2e/FFB300?text=Classroom'">
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">6–10</div><div class="stat-label">Classes Offered</div></div>
+  <div class="stat"><div class="stat-num">2023</div><div class="stat-label">Year Established</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Boards Covered</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Dedication</div></div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-tag">About Us</div>
+      <h2>Who We <span>Are</span></h2>
+      <p class="sub">Success Coaching is a dedicated institute in Saharsa, Bihar providing quality education and building strong academic foundations for students from Class 6 to 10.</p>
+      <div class="info-grid">
+        <div class="info-card"><div class="ic-label">Started</div><div class="ic-val">02 April 2023</div></div>
+        <div class="info-card"><div class="ic-label">Classes</div><div class="ic-val">6th to 10th</div></div>
+        <div class="info-card"><div class="ic-label">BSEB Batch</div><div class="ic-val">6:00 – 9:00 AM</div></div>
+        <div class="info-card"><div class="ic-label">CBSE Batch</div><div class="ic-val">3:00 – 5:00 PM</div></div>
+        <div class="info-card"><div class="ic-label">Director</div><div class="ic-val">Brajesh Sir</div></div>
+        <div class="info-card"><div class="ic-label">Principal</div><div class="ic-val">Mayank Sir</div></div>
+      </div>
+    </div>
+    <div class="about-images">
+      <img src="https://i.ibb.co/s9vd10Bq/img3.jpg" alt="Institute" onerror="this.src='https://placehold.co/600x200/FF6B00/fff?text=Our+Institute'">
+      <img src="https://i.ibb.co/b5kwtFN1/img4.jpg" alt="Teaching" onerror="this.src='https://placehold.co/300x160/1a1a2e/FFB300?text=Teaching'">
+      <img src="https://i.ibb.co/8L4SV0ws/img5.jpg" alt="Students" onerror="this.src='https://placehold.co/300x160/FF6B00/fff?text=Students'">
+    </div>
+  </div>
+</section>
+
+<section class="classes" id="classes">
+  <div class="section-tag">Academics</div>
+  <h2>Our <span>Classes & Batches</span></h2>
+  <p class="sub">Structured batches for both BSEB and CBSE board students from Class 6 to 10.</p>
+  <div class="classes-grid">
+    <div class="class-card">
+      <div class="class-icon">🌅</div>
+      <h3>Morning Batch</h3>
+      <p>For BSEB students preparing for Bihar board examinations.</p>
+      <div class="class-tag">6:00 AM – 9:00 AM</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">☀️</div>
+      <h3>Afternoon Batch</h3>
+      <p>For CBSE students following the central board curriculum.</p>
+      <div class="class-tag">3:00 PM – 5:00 PM</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">📘</div>
+      <h3>Class 6 – 8</h3>
+      <p>Foundation building with Maths, Science, English, Hindi & Social Science.</p>
+      <div class="class-tag">Foundation</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">🎓</div>
+      <h3>Class 9 – 10</h3>
+      <p>Board prep with focused exam strategies, practice tests & doubt clearing.</p>
+      <div class="class-tag">Board Prep</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="section-tag">Gallery</div>
+  <h2>Life at <span>Success Coaching</span></h2>
+  <p class="sub">Glimpses from our classrooms and student activities.</p>
+  <div class="gallery-grid">
+    <img src="https://i.ibb.co/zWzCYmT9/IMG-20260326-WA0027.jpg" alt="g1" onerror="this.src='https://placehold.co/400x300/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/s9TBLb24/img2.jpg" alt="g2" onerror="this.src='https://placehold.co/400x250/1a1a2e/FFB300?text=Photo'">
+    <img src="https://i.ibb.co/s9vd10Bq/img3.jpg" alt="g3" onerror="this.src='https://placehold.co/400x280/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/b5kwtFN1/img4.jpg" alt="g4" onerror="this.src='https://placehold.co/400x320/1a1a2e/FFB300?text=Photo'">
+    <img src="https://i.ibb.co/8L4SV0ws/img5.jpg" alt="g5" onerror="this.src='https://placehold.co/400x260/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/6RWqbRCx/img6.jpg" alt="g6" onerror="this.src='https://placehold.co/400x240/1a1a2e/FFB300?text=Photo'">
+    <img src="https://i.ibb.co/8g8W4sWv/img8.jpg" alt="g7" onerror="this.src='https://placehold.co/400x280/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/whhDDMN4/img9.jpg" alt="g8" onerror="this.src='https://placehold.co/400x300/1a1a2e/FFB300?text=Photo'">
+    <img src="https://i.ibb.co/7JJMbPs5/img10.jpg" alt="g9" onerror="this.src='https://placehold.co/400x260/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/1twmcBQ0/img11.jpg" alt="g10" onerror="this.src='https://placehold.co/400x240/1a1a2e/FFB300?text=Photo'">
+    <img src="https://i.ibb.co/RT9zPhZg/img12.jpg" alt="g11" onerror="this.src='https://placehold.co/400x300/FF6B00/fff?text=Photo'">
+    <img src="https://i.ibb.co/ycp61nhr/img13.jpg" alt="g12" onerror="this.src='https://placehold.co/400x260/1a1a2e/FFB300?text=Photo'">
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="section-tag">Our Team</div>
+  <h2>Meet Our <span>Mentors</span></h2>
+  <p class="sub">Experienced educators dedicated to your child's success.</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="https://i.ibb.co/CsJbsdv6/brajesh.jpg" alt="Brajesh Sir" onerror="this.src='https://ui-avatars.com/api/?name=Brajesh+Sir&background=FF6B00&color=fff&size=90&rounded=true'">
+      <h3>Brajesh Sir</h3>
+      <div class="role">Director</div>
+    </div>
+    <div class="team-card">
+      <img src="https://ui-avatars.com/api/?name=Mayank+Sir&background=1a1a2e&color=FFB300&size=90&rounded=true" alt="Mayank Sir">
+      <h3>Mayank Sir</h3>
+      <div class="role">Principal</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-tag" style="background:rgba(255,107,0,.2);color:var(--gold);">Contact Us</div>
+  <h2>Get In <span>Touch</span></h2>
+  <p class="sub">We're here to answer your questions about admissions, schedules, and more.</p>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div style="font-weight:700;margin-bottom:4px;color:#eee;">Address</div>
+          <div style="color:#bbb;font-size:.9rem;line-height:1.6;">VJJ6+CV8, Tiwari Tola Chowk Rd,<br>Aadarsh Nagar, Saharsa,<br>Bihar – 852202</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div style="font-weight:700;margin-bottom:4px;color:#eee;">Phone</div>
+          <a href="tel:+917295023249" style="color:var(--gold);font-size:1rem;font-weight:700;">+91 72950 23249</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div style="font-weight:700;margin-bottom:4px;color:#eee;">Timings</div>
+          <div style="color:#bbb;font-size:.9rem;line-height:1.7;">BSEB: 6:00 AM – 9:00 AM<br>CBSE: 3:00 PM – 5:00 PM</div>
+        </div>
+      </div>
+      <a class="wa-btn" href="https://wa.me/917295023249?text=Hello%20Success%20Coaching%2C%20I%20want%20to%20enquire%20about%20admissions." target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="white" stroke-width="1.5"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://maps.google.com/maps?q=Aadarsh+Nagar+Saharsa+Bihar+852202&output=embed" allowfullscreen loading="lazy" title="Success Coaching Location"></iframe>
+      <div style="margin-top:12px;font-size:.85rem;color:#888;text-align:center;">
+        <a href="https://maps.app.goo.gl/4a6r7hxcNzqgvzCb9" target="_blank" style="color:var(--gold);">📌 Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="social-bar">
+  <a href="https://www.facebook.com/share/1B4baKi1xL/" target="_blank">
+    <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Follow us on Facebook
+  </a>
+</div>
+
+<footer>
+  © 2024 <span>Success Coaching</span> – Saharsa, Bihar &nbsp;|&nbsp;
+  <a href="tel:+917295023249" style="color:var(--gold);">+91 72950 23249</a>
+</footer>
+
+<a class="float-wa" href="https://wa.me/917295023249?text=Hello%20Success%20Coaching%2C%20I%20want%20to%20enquire%20about%20admissions." target="_blank" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="white" stroke-width="1.5"/></svg>
+</a>
+
+</body>
+</html>
