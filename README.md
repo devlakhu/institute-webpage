@@ -19,7 +19,7 @@ You will need **Git** installed on your machine and **Python** (to run a local d
 ```
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/devlakhu/institute-webpage```
+   git clone https://github.com/devlakhu/institute-webpage
 
  2. **Navigate into the directory:**
    ```bash
