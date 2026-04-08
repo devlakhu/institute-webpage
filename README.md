@@ -4,7 +4,7 @@ Built a webpage for "coaching/institute"
 ```markdown
 # Success Coaching Institute 🎓
 
-A professional, responsive website for **Success Coaching**, built using modern frontend technologies. This platform provides students with an intuitive interface to explore courses, meet the faculty, and enroll in coaching programs.
+A professional, responsive website for **Success Coaching**, built using modern frontend technologies. This platform provides students with an intuitive interface to explore courses, meet the faculty, and enroll in coaching programs.```
 
 ---
 
@@ -16,10 +16,10 @@ Follow these instructions to get a copy of the project up and running on your lo
 You will need **Git** installed on your machine and **Python** (to run a local development server).
 
 ### Installation & Usage
-
+```
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/devlakhu/institute-webpage](https://github.com/devlakhu/institute-webpage)
+   git clone [https://github.com/devlakhu/institute-webpage](https://github.com/devlakhu/institute-webpage)```
 
 ```
  2. **Navigate into the directory:**
