@@ -25,6 +25,7 @@ You will need **Git** installed on your machine and **Python** (to run a local d
    ```bash
    cd institute-webpage  
    ```
+
  3. **Start the local server:**
    Python has a built-in module to serve files instantly:
    ```bash
@@ -47,8 +48,6 @@ You will need **Git** installed on your machine and **Python** (to run a local d
 ```text
 institute-webpage/
 ├── index.html        # Only Page
-           
-
 ```
 ## 🤝 Contributing
  1. Fork the Project.
