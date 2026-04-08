@@ -15,7 +15,7 @@ Get the website running on your local machine in seconds.
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/devlakhu/institute-webpage](https://github.com/devlakhu/institute-webpage)
+git clone https://github.com/devlakhu/institute-webpage
 
 ```
 ### 2. Enter the directory
